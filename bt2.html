@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4> Bài tập 2</h4>
+<table>
+    <tr>
+        <td>Số tiền bạn gửi tiết kiệm :</td>
+        <td><input type="text" value="10000000" id="money"></td>
+    </tr>
+    <tr>
+        <td>Thời gian gửi tiết kiệm (theo năm):</td>
+        <td><input type="text" name="thoi gian gui tiet kiem" id="time"></td>
+    </tr>
+
+</table>
+<button onclick="sum()">Kết quả</button>
+<br>
+<p id="summoney"></p>
+<script>
+    function sum() {
+        let s0 = parseInt(document.getElementById("money").value);
+        let n = document.getElementById("time").value;
+        let si;
+        for(let i=1;i<=n;i++) {
+            si = s0 + 0.08 * s0;
+            s0 = si;
+        }
+        document.getElementById("summoney").innerHTML="Tiền tiết kiệm của bạn sau " +n +" năm là : " +si+" VND";
+    }
+</script>
+</body>
+</html>
